@@ -32,6 +32,16 @@ logger.info(f"✅ Gemini loaded: {GEMINI_MODEL}")
 
 app = FastAPI(title="JIHS RAG Backend (SQLite)", version="1.0.0")
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Untuk development
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 logger.info(f"🗄️  Backend DB Path: {DB_PATH}")
 logger.info(f"🗄️  File exists: {Path(DB_PATH).exists()}")
 
