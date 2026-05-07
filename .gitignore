@@ -1,2 +1,24 @@
+# --- Root .gitignore ---
+# Secrets
 .env
-/venv
+.env.local
+*.key
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Flutter (PENTING: Jangan commit folder ini!)
+.dart_tool/
+build/
+*.iml
+*.userprefs
+.pub/
+
+# Database & Local State
+*.db
+*.sqlite3
+chroma_db/
+*.log
